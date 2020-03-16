@@ -1,24 +1,30 @@
 
 $('.square').click(function(){
     var cliccato = $(this);
-    var numeroUnivoco = $(this).children('span').text();
+    var numeroUnivoco = $(this).children('span');
     // console.log(numeroUnivoco);
     $.ajax({
         url: 'https://flynn.boolean.careers/exercises/api/random/int',
         method: 'GET',
         success: function (data) {
             var numeroRandom = data.response;
-            decisioneColore(numeroRandom);
+            decisioneColore(numeroRandom, cliccato);
+            scriviNumero(numeroUnivoco, numeroRandom)
         },
         error: function () {
             alert('ERROR!!!!!!')
         }
     });
-    function decisioneColore (numRandom) {
+
+    function scriviNumero (numUnivoco, numRandom) {
+        numUnivoco.text(numRandom)
+    };
+
+    function decisioneColore (numRandom, quadCliccato) {
         if (numRandom <= 5) {
-            cliccato.addClass('giallo');
+            quadCliccato.addClass('giallo');
         } else {
-            cliccato.addClass('verde');
+            quadCliccato.addClass('verde');
         }
     };
 });
