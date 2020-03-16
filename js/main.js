@@ -15,10 +15,6 @@ $('.square').click(function(){
             alert('ERROR!!!!!!')
         }
     });
-
-
-
-
 });
 
 function decisioneColore (numRandom, quadCliccato) {
