@@ -16,15 +16,19 @@ $('.square').click(function(){
         }
     });
 
-    function scriviNumero (numUnivoco, numRandom) {
-        numUnivoco.text(numRandom)
-    };
 
-    function decisioneColore (numRandom, quadCliccato) {
-        if (numRandom <= 5) {
-            quadCliccato.addClass('giallo');
-        } else {
-            quadCliccato.addClass('verde');
-        }
-    };
+
+
 });
+
+function decisioneColore (numRandom, quadCliccato) {
+    if (numRandom <= 5) {
+        quadCliccato.addClass('giallo');
+    } else {
+        quadCliccato.addClass('verde');
+    }
+};
+
+function scriviNumero (numUnivoco, numRandom) {
+    numUnivoco.text(numRandom)
+};
